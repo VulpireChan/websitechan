@@ -4,7 +4,57 @@
 <meta charset="utf-8">
 <title>Website</title>
 </head>
-
+	 
 <body>
+	<form action="/action_page.php">
+  <fieldset>
+    <legend>Info:</legend>
+	<p><b>Who are you?</b></p>
+   	<input type="radio" id="Katie" name="name" value="katie">
+	<label for="female">Katie</label><br>
+	<input type="radio" id="Nick" name="name" value="nick">
+	<label for="male">Nick</label><br><br>
+
+	<label for="sleepAmount">Sleep Amount</label><br>
+	<input type="number" id="sleepAmount" name="sleep"><br>
+	
+	<input type="button" id="submit" class="submit" value="submit" onclick="getData()">
+  </fieldset>
+</form> 
+<script>
+const lib = require('.library');
+const fs = require('fs');	
+	
+function submitButton(){
+	document.getElementById("submit").submit();
+}		
+	
+function getData(){
+	var x = document.getElementById("submit").submit();
+	var = "";
+	var i;
+	var text = ;
+	var d = new Date();
+	var n = d.getDate();
+	
+	for(i=0; i< x.length ;i++){
+		text += x.elements[i].value + "<br>";		
+	}
+	
+	if(document.getElementsById("nick").checked == true){
+	   fs.writeFile('nick.txt', text, (err) =>{
+		   if (err) throw err;
+	   })
+	   
+	} else if(document.getElementsById("katie").checked == true){
+		fs.writeFile('katie.txt', text, (err) =>{
+		   if (err) throw err;
+	   })
+		
+	}
+	
+}
+</script>	
+	
 </body>
 </html>

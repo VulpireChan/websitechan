@@ -41,12 +41,12 @@ function getData(){
 		text += x.elements[i].value + "<br>";		
 	}
 	
-	if(document.getElementsById("nick").checked == true){
+	if(document.getElementsById("Nick").checked == true){
 	   fs.writeFile('nick.txt', text, (err) =>{
 		   if (err) throw err;
 	   })
 	   
-	} else if(document.getElementsById("katie").checked == true){
+	} else if(document.getElementsById("Katie").checked == true){
 		fs.writeFile('katie.txt', text, (err) =>{
 		   if (err) throw err;
 	   })
